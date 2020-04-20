@@ -1,0 +1,19 @@
+@import 'sass/helpers/mixins.scss';
+
+.main {
+  margin: 6rem 0 0;
+  @include breakpoint(mobile){
+    margin: calc(6rem + 1.76em) 0 0
+  }
+}
+
+.bottom-blank {
+  height: 8rem;
+  background: #ffffff;
+  position: relative;
+  z-index: 999;
+  
+  @include breakpoint(mobile){
+    height: calc(8rem + 1.4em)
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+	<title>Hello</title>
+<link href="/static/css/success.min.css" rel="stylesheet"></head>
+<body>
+	<div class="<% if (cookies.theme) { %><%= cookies.theme %> <% } else { %><% } %>view-success inheritBaseFontSize container">
+    <header class="header">
+			<nav class="wrapper menu">
+				<div class="hamburger">
+					<span class="hamburger__line"></span>
+					<span class="hamburger__line"></span>
+					<span class="hamburger__line"></span>
+				</div>
+				<ul class="menu-list">
+					<li class="menu-list-item"><a class="menu-list-item__link" href="/signin"><% if(cookies.lang) { %><%= cookies.lang.success.menu.signin %> <% } else { %> Sign in <% } %></a></li>
+					<li class="menu-list-item"><figure class="dropdown-lang-media"><img src="<% if(cookies.lang) { %><%= '/static/img/' + cookies.lang.flag + '.png' %> <% } else { %> /static/img/usa.png <% } %>" class="dropdown-lang-media__icon usa"></figure><a class="text-uppercase menu-list-item__link menu-list-item__link-lang" href="#"><% if(cookies.lang) { %><%= cookies.lang.success.menu.lang %> <% } else { %> Eng <% } %></a></li>
+					<li class="menu-list-item"><a class="menu-list-item__link menu-list-item__link-theme" href="#"></a></li>
+					<ul class="dropdown-lang">
+						<li class="text-uppercase dropdown-lang-item"><figure class="dropdown-lang-media"><img src="/static/img/usa.png" class="dropdown-lang-media__icon usa"></figure><a class="dropdown-lang-item__link" href="#">Eng</a></li>
+						<li class="text-uppercase dropdown-lang-item"><figure class="dropdown-lang-media"><img src="/static/img/pl.png" class="dropdown-lang-media__icon pl"></figure><a class="dropdown-lang-item__link" href="#">Pl</a></li>
+					</ul>
+				</ul>
+			</nav>
+		</header>
+		<main class="main">
+			<div class="form-success">
+				<div class="wrapper">
+					<div class="dots">
+						<span class="dots__radius"></span>
+						<span class="dots__radius"></span>
+						<span class="dots__radius"></span>
+					</div>
+					<p class="form-success__text"><% if(cookies.lang) { %><%= cookies.lang.success.info.text %> <% } else { %> Your account has been registered. Check your mail and click on the activation link to confirm your account. <% } %></p>
+				</div>
+			</div>
+		</main>
+		<div class="bottom-blank"></div>
+	</div>
+<script src="/static/js/success.bundle.js"></script></body>
+</html>

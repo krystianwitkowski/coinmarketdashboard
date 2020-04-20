@@ -1,0 +1,14 @@
+.menu{
+  .menu-list--active {
+    height: 6.7rem;
+    margin-top: 1.3rem;
+  }
+}
+
+.menu{
+  .menu-list{
+    .dropdown-lang--active{
+    visibility: visible;
+    }
+  }
+}

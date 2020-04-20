@@ -1,0 +1,362 @@
+@import "sass/helpers/mixins.scss";
+.view-dashboard.view-search{
+  .dashboard-table{
+  overflow-x: initial;
+  }
+}
+
+.header {
+  background: #ffffff;
+  box-shadow: var(--primary-shape-box-shadow);
+  font-size: 1.2rem;
+  border-top: 2px solid var(--primary-shape-color);
+  z-index: 999;
+  position: relative;
+
+  .wrapper {
+    padding: 1.8rem 0;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: row;
+        width: 40rem;
+      }
+
+      @include breakpoint(tablet) {
+        width: 60rem;
+      }
+
+      @include breakpoint(lg-tablet) {
+        width: 80rem;
+      }
+    }
+  }
+
+  .global-metrics {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+      &:after {
+        content: "";
+        width: 3px;
+        height: 3px;
+        background: #eeeeee;
+        display: block;
+        margin: 0 1.2rem;
+      }
+    }
+
+    &:nth-child(1n + 2) {
+      margin-top: 1.2rem;
+    }
+
+    @include breakpoint(mobile) {
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+
+      &:nth-child(4) {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    @include breakpoint(tablet) {
+      &:nth-child(3) {
+        margin-top: 0;
+      }
+    }
+
+    @include breakpoint(lg-tablet) {
+      &:nth-child(4) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.menu {
+  background: var(--primary-shape-background-color);
+  font-size: 1.2rem;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2.1rem 0;
+
+    @include breakpoint(mobile) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      height: 5.6rem;
+    }
+  }
+}
+
+.search {
+  position: relative;
+  width: 100%;
+  height: 2.6rem;
+
+  @include breakpoint(mobile) {
+    width: 15rem;
+  }
+  &__input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    background: transparent;
+    padding: 0 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  ::placeholder {
+    color: var(--primary-text-color);
+  }
+
+  .btn-search {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.1rem;
+
+    &:before {
+      content: "\f002";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 600;
+    }
+  }
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.2rem;
+
+  @include breakpoint(mobile) {
+    margin-top: 0;
+  }
+  &-item {
+    &:nth-child(1n) {
+      margin-right: 1.2rem;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.dashboard-table {
+  color: var(--primary-heading-color);
+  margin-top: 6.1rem;
+  font-size: 1.2rem;
+  overflow-x: scroll;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.dashboard-error{
+color: var(--primary-heading-color);
+font-size: 1.8rem;
+margin-top: 1rem;
+line-height: 2;
+text-align: center;
+
+  @include breakpoint(mobile){
+    font-size: calc(1.8rem + 0.16rem * 1);
+    margin-top: calc(1rem + 0.42rem * 1)
+  }
+
+  @include breakpoint(tablet){
+    font-size: calc(1.8rem + 0.16rem * 2);
+    margin-top: calc(1rem + 0.42rem * 2)
+  }
+
+  @include breakpoint(lg-tablet){
+    font-size: calc(1.8rem + 0.16rem * 3);
+    margin-top: calc(1rem + 0.42rem * 3)
+  }
+
+  @include breakpoint(desktop){
+    font-size: calc(1.8rem + 0.16rem * 4);
+    margin-top: calc(1rem + 0.42rem * 4)
+  }
+
+  @include breakpoint(lg-desktop){
+    font-size: calc(1.8rem + 0.16rem * 5);
+    margin-top: calc(1rem + 0.42rem * 5)
+  }
+
+  .wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+    .dashboard-error__not-found{
+    font-weight: 400;
+    }
+  }
+}
+
+.dashboard-nav {
+  .dashboard-group__item {
+    font-weight: 600;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background: #eeeeee;
+      width: 10000px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+
+    &:nth-child(1n + 2) {
+      &:after {
+        display: none;
+      }
+    }
+    &:last-child {
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  .dashboard-group__media {
+    margin-right: 1.5rem;
+  }
+
+  .text-margin {
+    margin-left: 0.6rem;
+  }
+}
+
+.dashboard-pagination {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+
+  .btn-pg {
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    padding: 0.5rem 0.9rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+    cursor: pointer;
+  }
+
+  .btn-prev {
+    margin-left: 0.6rem;
+  }
+}
+
+.dashboard-group__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 5.4rem;
+}
+
+
+.dashboard-group {
+  &__media{
+  max-width: 1.8rem;
+  }
+
+  &:nth-child(5){
+    width: 10.1rem;
+  }
+  .dashboard-filter-name {
+    font-weight: 600;
+    margin-bottom: 2.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    .dropdown {
+      width: 10px;
+      height: 5px;
+      background: #eeeeee;
+      position: relative;
+      overflow: hidden;
+      margin-left: 0.9rem;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background: #ffffff;
+        transform: rotate(-45deg);
+      }
+      &:before {
+        left: -7px;
+      }
+
+      &:after {
+        right: -6px;
+      }
+    }
+  }
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.6rem;
+
+  .dashboard-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &:nth-child(1) {
+      margin-left: 9.1rem;
+      width: 9.3rem;
+    }
+
+    &:nth-child(1n + 2) {
+      margin-left: 5.3rem;
+    }
+    &:last-child {
+      align-items: center;
+    }
+
+    &:nth-child(2){
+      width: 5.4rem;
+    }
+
+    &:nth-child(3){
+      width: 11.5rem;
+    }
+    &:nth-child(4){
+      width: 13rem;
+    }
+  }
+}

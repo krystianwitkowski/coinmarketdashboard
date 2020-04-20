@@ -1,0 +1,131 @@
+
+.theme-dark {
+  &.view-home, &.view-signin{
+  background: #1c1c1c;
+
+    .dropdown-lang{
+    background: rgb(60, 60, 60);
+    }
+
+    .header {
+      background: rgb(60, 60, 60);
+    }
+
+    .menu {
+      color: #ffffff;
+    }
+
+    .menu-list-item__link-theme{
+      &:before{
+      color: #ffffff;
+      }
+    }
+
+    .form-sign-up, .form-sign-in {
+      background: rgb(60, 60, 60);
+
+      .form-header__title {
+        color: #ffffff;
+      }
+
+      .label-text__input {
+        background: rgb(60, 60, 60);
+        color: #ffffff;
+      }
+
+      .account-info {
+        color: #ffffff;
+      }
+
+      .btn-submit {
+        color: #ffffff;
+      }
+
+      ::placeholder {
+        color: #ffffff;
+      }
+    }
+
+    .bottom-blank {
+      background: #1c1c1c;
+    }
+  }
+
+  &.view-success, &.view-verify{
+    background: #1c1c1c;
+
+      .dropdown-lang{
+      background: rgb(60, 60, 60);
+      }
+
+      .header {
+        background: rgb(60, 60, 60);
+      }
+
+      .menu {
+        color: #ffffff;
+      }
+
+      .menu-list-item__link-theme{
+        &:before{
+        color: #ffffff;
+        }
+      }
+
+      .form-success{
+        background: rgb(60, 60, 60);
+      }
+
+      .form-success__text{
+      color: #ffffff;
+      }
+
+      .bottom-blank {
+        background: #1c1c1c;
+      }
+  }
+
+  &.view-dashboard{
+    background: #1c1c1c;
+    .header {
+      background: rgb(60, 60, 60);
+      color: #ffffff;
+    }
+
+    .menu{
+      background: #1c1c1c;
+      color: #ffffff;
+    }
+
+    .search__input{
+    border: 1px solid rgb(60, 60, 60);
+    }
+
+    ::placeholder {
+    color: #ffffff;
+    }
+    .dashboard-table{
+    color: #ffffff;
+
+      .dashboard-filter-name{
+        .dropdown{
+          &:before, &:after{
+          background: #1c1c1c;
+          }
+        }
+      }
+    }
+    .dashboard-group__item{
+      &:before, &:after{
+      background: rgb(60, 60, 60);
+      }
+    }
+    .btn-pg{
+    border: 1px solid rgb(60, 60, 60);
+    }
+
+    .dashboard-error{
+    color: #ffffff;
+    }
+  }
+}

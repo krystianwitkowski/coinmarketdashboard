@@ -1,0 +1,211 @@
+@import "sass/helpers/mixins.scss";
+
+.form-sign-up,
+.form-sign-in {
+  box-shadow: var(--primary-form-box-shadow);
+  width: 24rem;
+  margin: 0 auto;
+  position: relative;
+  overflow-y: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  animation: slide-down 0.5s ease, opacity 0.5s ease;
+  @include breakpoint(mobile) {
+    width: calc(24rem + 2.6em);
+  }
+
+  .container {
+    padding: 3rem;
+    position: relative;
+    overflow-x: hidden;
+
+    @include breakpoint(mobile) {
+      padding: calc(3rem + 0.38em) calc(3rem + 0.46em) calc(3rem + 0.72em);
+    }
+  }
+
+  &:after {
+    content: "";
+    background: var(--primary-shape-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: rotate(-45deg) translateX(-50%);
+    position: absolute;
+    bottom: -1.2rem;
+    left: 50%;
+
+    @include breakpoint(mobile) {
+      bottom: calc(-1.2rem + 0.1em);
+    }
+  }
+}
+
+.form-header {
+  color: var(--primary-heading-color);
+  margin-bottom: 3rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: calc(3rem + 0.64em);
+  }
+}
+
+.form-header__title {
+  font-size: 2.3rem;
+
+  @include breakpoint(mobile) {
+    font-size: calc(2.3rem + 0.18em);
+  }
+}
+
+.label-text {
+  &:nth-child(1n + 2) {
+    margin-top: 3.4rem;
+    @include breakpoint(mobile) {
+      margin-top: calc(3.4rem + 0.2em);
+    }
+  }
+  .valid-message {
+    color: var(--primary-wrong-valid-color);
+    font-size: 1.1rem;
+    position: absolute;
+    top: 2rem;
+    @include breakpoint(mobile) {
+      font-size: 1.2rem;
+      top: calc(2rem + 0.1rem);
+    }
+    @include breakpoint(tablet) {
+      top: calc(2rem + 0.1rem * 2);
+    }
+    @include breakpoint(lg-tablet) {
+      top: calc(2rem + 0.1rem * 3);
+    }
+    @include breakpoint(desktop) {
+      top: calc(2rem + 0.1rem * 4);
+    }
+    @include breakpoint(lg-desktop) {
+      top: calc(2rem + 0.1rem * 5);
+    }
+  }
+}
+
+.active-input{
+  &:before {
+    content: "";
+    background: var(--primary-shape-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(-45deg) translateY(-50%);
+    position: absolute;
+    left: -3.6rem;
+    top: calc(50% + -0.05em);
+    opacity:0;
+    transition: all 0.25s ease;
+    @include breakpoint(mobile) {
+      left: calc(-3.6rem + -0.4em);
+    }
+  }
+}
+
+.label-text{
+position: relative;
+}
+
+.label-text__input:focus + .active-input{
+    &:before{
+    opacity: 1 !important;
+    }
+}
+
+.label-text__input {
+  color: var(--primary-text-color);
+  font-size: 1.3rem;
+  width: 100%;
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.5rem;
+  }
+}
+
+.account-info {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 2.4rem;
+  line-height: 1.333;
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    margin-top: calc(2.4rem + 0.4rem);
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.5rem;
+    margin-top: calc(2.4rem + 0.4rem * 2);
+  }
+
+  @include breakpoint(lg-tablet) {
+    margin-top: calc(2.4rem + 0.4rem * 3);
+  }
+
+  @include breakpoint(desktop) {
+    margin-top: calc(2.4rem + 0.4rem * 4);
+    text-align: right;
+  }
+
+  @include breakpoint(lg-desktop) {
+    margin-top: calc(2.4rem + 0.4rem * 5);
+  }
+
+  .sign-in__link,
+  .sign-up__link {
+    position: relative;
+    display: inline-flex;
+
+    &:before {
+      content: "";
+      background: var(--primary-shape-color);
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+    }
+  }
+}
+
+.btn-submit {
+  color: var(--primary-heading-color);
+  font-size: 1.9rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+  cursor: pointer;
+
+  @include breakpoint(mobile) {
+    font-size: calc(1.9rem + 0.1em);
+    margin-top: calc(4rem + 0.18rem);
+  }
+
+  @include breakpoint(tablet) {
+    margin-top: calc(4rem + 0.18rem * 2);
+  }
+
+  @include breakpoint(lg-tablet) {
+    margin-top: calc(4rem + 0.18rem * 3);
+  }
+
+  @include breakpoint(desktop) {
+    margin-top: calc(4rem + 0.18rem * 4);
+  }
+
+  @include breakpoint(lg-desktop) {
+    margin-top: calc(4rem + 0.18rem * 5);
+  }
+}
+
+::placeholder {
+color: var(--primary-text-color);
+opacity:1;
+}

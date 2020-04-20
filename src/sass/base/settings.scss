@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: var(--default-font-size);
+  color: var(--primary-text-color);
+  font-family: "Montserrat", sans-serif;
+  word-wrap: break-word;
+  background: #ffffff;
+  font-weight: 200;
+  overflow-x: hidden;
+  height:100%;
+}
+
+.container{
+  min-height: 100%;
+}
+.wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: 0;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  display: block;
+}
+
+button {
+  background: none;
+}
+
+label {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

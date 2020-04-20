@@ -1,0 +1,62 @@
+@import "sass/helpers/mixins.scss";
+
+.form-success {
+  background: var(--primary-shape-background-color);
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 0.4rem 0.8rem 0px rgba(0, 0, 0, 0.03);
+
+  @include breakpoint(mobile) {
+  height: calc(18rem + 1.54em);
+  box-shadow: inset 0px calc(0.4rem + 0.16em) calc(0.8rem + 0.16em) 0px rgba(0, 0, 0, 0.03);
+  }
+
+  .wrapper {
+    @include breakpoint(mobile) {
+      position: relative;
+      top: calc(-0.4em);
+    }
+  }
+
+  .dots {
+    margin-bottom: 2.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include breakpoint(mobile) {
+      margin-bottom: calc(2.2rem + 0.2em);
+    }
+
+    &__radius {
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: rgb(238, 238, 238);
+      border-radius: 50%;
+      display: block;
+
+      &:nth-child(2) {
+        margin: 0 0.4rem;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 auto;
+
+    @include breakpoint(mobile) {
+      font-size: 1.4rem;
+      width: 38rem;
+    }
+
+    @include breakpoint(tablet) {
+      font-size: 1.5rem;
+    }
+  }
+}

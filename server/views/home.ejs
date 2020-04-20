@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+	<title>Hello</title>
+<link href="/static/css/home.min.css" rel="stylesheet"></head>
+<body>
+	<div class="<% if (cookies.theme) { %><%= cookies.theme %> <% } else { %><% } %>view-home inheritBaseFontSize container">
+    <header class="header">
+			<nav class="wrapper menu">
+				<div class="hamburger">
+					<span class="hamburger__line"></span>
+					<span class="hamburger__line"></span>
+					<span class="hamburger__line"></span>
+				</div>
+				<ul class="menu-list">
+					<li class="menu-list-item"><a class="menu-list-item__link" href="/signin"><% if(cookies.lang) { %><%= cookies.lang.home.menu.signin %> <% } else { %> Sign in <% } %></a></li>
+					<li class="menu-list-item"><figure class="dropdown-lang-media"><img src="<% if(cookies.lang) { %><%= '/static/img/' + cookies.lang.flag + '.png' %> <% } else { %> /static/img/usa.png <% } %>" class="dropdown-lang-media__icon usa"></figure><a class="text-uppercase menu-list-item__link menu-list-item__link-lang" href="#"><% if(cookies.lang) { %> <%= cookies.lang.home.menu.lang %> <% } else { %> Eng <% } %></a></li>
+					<li class="menu-list-item"><a class="menu-list-item__link menu-list-item__link-theme" href="#"></a></li>
+					<ul class="dropdown-lang">
+						<li class="text-uppercase dropdown-lang-item"><figure class="dropdown-lang-media"><img src="/static/img/usa.png" class="dropdown-lang-media__icon usa"></figure><a class="dropdown-lang-item__link" href="#">Eng</a></li>
+						<li class="text-uppercase dropdown-lang-item"><figure class="dropdown-lang-media"><img src="/static/img/pl.png" class="dropdown-lang-media__icon pl"></figure><a class="dropdown-lang-item__link" href="#">Pl</a></li>
+					</ul>
+				</ul>
+			</nav>
+		</header>
+		<main class="main">
+			<form class="form-sign-up">
+				<div class="container">
+					<header class="form-header">
+						<h1 class="form-header__title"><% if(cookies.lang) { %><%= cookies.lang.home.form.title %><% } else { %>Sign up<% } %></h1>
+					</header>
+					<label class="label-text-nav label-text label-text-username">
+						<input class="label-text__input" type="text" placeholder="<% if(cookies.lang) { %><%= cookies.lang.home.form.inputs.username %><% } else { %>Username<% } %>">
+						<span class="active-input"></span>
+						<p class="valid-message"></p>
+					</label>
+					<label class="label-text label-text-password">
+						<input class="label-text__input" type="password" placeholder="<% if(cookies.lang) { %><%= cookies.lang.home.form.inputs.password %><% } else { %>Password<% } %>">
+						<span class="active-input"></span>
+						<p class="valid-message"></p>
+					</label>
+					<label class="label-text label-text-password">
+						<input class="label-text__input" type="text" placeholder="<% if(cookies.lang) { %><%= cookies.lang.home.form.inputs.mail %><% } else { %>E-mail<% } %>">
+						<span class="active-input"></span>
+						<p class="valid-message"></p>
+					</label>
+					<p class="account-info"><% if(cookies.lang) { %> <%= cookies.lang.home.form.info.split('?')[0] %> ? <% } else { %> Do you have an account ? <% } %><a class="sign-in__link" href="/signin"><% if(cookies.lang) { %> <%= cookies.lang.home.form.info.split('?')[1] %> <% } else { %> Sign in <% } %></a></p>
+					<button class="btn-submit" type="submit"><% if(cookies.lang) { %><%= cookies.lang.home.form.button %><% } else { %>enter<% } %></button>
+				</div>
+			</form>
+		</main>
+		<div class="bottom-blank"></div>
+	</div>
+<script src="/static/js/home.bundle.js"></script></body>
+</html>
