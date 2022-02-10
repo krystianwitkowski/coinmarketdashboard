@@ -36,7 +36,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss-combine-duplicated-selectors": "^8.1.0",
     "postcss-discard-comments": "^4.0.2",
     "postcss-loader": "^3.0.0",
